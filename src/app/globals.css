@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import 'tailwindcss/theme';
+@import 'tailwindcss/utilities';
 
 :root {
   --background: #ffffff;
@@ -10,6 +12,45 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --animate-border-spin: border-spin 5s linear infinite;
+
+  @keyframes border-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+}
+
+
+@layer components {
+  .btn-wrapper {
+    @apply relative overflow-hidden rounded-full active:inset-shadow-sm bg-linear-to-b from-[#2a2a2a] to-[#121212];
+  }
+
+  .btn-content {
+    @apply absolute left-[2px] top-[2px] h-[calc(100%-4px)] w-[calc(100%-4px)] rounded-full active:inset-shadow-sm bg-[#080808] hover:bg-neutral-50;
+  }
+
+    /* Gradient */
+  .btn-wrapper::before {
+    background: conic-gradient(
+      white 0deg,
+      transparent 80deg
+    );
+
+    @apply absolute left-[-200%] top-[-200%] h-[500%] w-[500%] animate-border-spin content-[''] transition-all duration-300;
+  }
+
+  .btn-wrapper:hover::before {
+    background: conic-gradient(
+      black 0deg,
+      transparent 80deg
+    );
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,9 +64,4 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
-
-canvas {
-  z-index: 0 !important;
-  pointer-events: none;
 }
