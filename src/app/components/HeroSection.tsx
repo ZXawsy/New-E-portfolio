@@ -14,7 +14,7 @@ function HeroSection() {
 
         {/* Background circles */}
         <div className="min-h-screen h-screen max-h-screen w-full flex flex-col justify-center items-center absolute overflow-hidden">
-          <div className="absolute flex justify-center w-full max-w-screen max-h-screen h-full overflow-hidden pointer-events-none top-200 lg:top-180 md:top-180 sm:top-200 z-0">
+          <div className="absolute flex justify-center w-full max-w-screen max-h-screen h-full overflow-hidden pointer-events-none top-180 lg:top-170 md:top-180 sm:top-200 z-0">
             <div className="absolute h-[995px] w-[2100px] rounded-[50%] bg-white" />
             <div className="absolute mt-[5px] h-[995px] w-[2242px] rounded-[50%] bg-black shadow-[inset_0_0_20px_6px_rgba(255,255,255,0.3)]" />
           </div>
@@ -24,7 +24,7 @@ function HeroSection() {
         </div>
 
         {/* Main content - highest layer */}
-        {/* <section className="w-full max-w-screen flex flex-col gap-10 justify-center items-center overflow-hidden z-20 relative">
+        <section className="w-full max-w-screen flex flex-col gap-10 justify-center items-center overflow-hidden z-20 relative">
           <GlareHover
             glareColor="#ffffff"
             glareOpacity={0.3}
@@ -48,13 +48,13 @@ function HeroSection() {
             text="Lim Weiqin Ian"
             disabled={false}
             speed={3}
-            className="text-8xl font-semibold"
+            className="text-8xl font-semibold text-center"
           />
           <h2 className="text-xl font-medium text-center text-[#ffffffa4]">
             &quot;Life is a Do It Yourself Project&quot;
           </h2>
           <AnimatedBtn />
-        </section> */}
+        </section>
         <Earth3D />
       </div>
     </>

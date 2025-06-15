@@ -49,7 +49,7 @@ function Tabbar({ className }: { className?: string }) {
     <>
       {/* min-w-2xs 288px at small mobile views */}
       <nav
-        className={`flex flex-row gap-2 px-2 py-1.5 rounded-full border border-black/40 bg-black/40 backdrop-blur-sm w-min max-w-md ${className}`}
+        className={`flex flex-row gap-2 px-2 py-1.5 rounded-full border border-[#212121] bg-black/40 backdrop-blur-sm w-min max-w-md ${className}`}
       >
         <motion.div
           className={`absolute rounded-full bg-[#212121] aspect-square`}
